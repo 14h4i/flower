@@ -13,20 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Kiểm tra mã nguồn từ repository
+    # Check out the repository code
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Thiết lập Flutter
+    # Set up Flutter
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '<flutter-version>' # Thay <flutter-version> bằng phiên bản Flutter bạn muốn, hoặc bỏ qua để dùng bản mới nhất.
 
-    # Cài đặt các dependencies
+    # Install dependencies
     - name: Install dependencies
       run: flutter pub get
 
-    # Chạy kiểm tra
+    # Run tests
     - name: Run tests
       run: flutter test

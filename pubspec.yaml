@@ -1,0 +1,19 @@
+name: flower
+description: "A state management package for Flutter, offering simplicity, efficiency, and scalability."
+version: 0.0.1
+homepage: https://github.com/14h4i/flower
+
+environment:
+  sdk: ^3.5.4
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:

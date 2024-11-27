@@ -1,39 +1,90 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flower - A Lightweight Flutter State Management Solution
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+---
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+[![Pub](https://img.shields.io/pub/v/flower.svg)](https://pub.dev/packages/flower)
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+
+Flower is a simple and efficient state management package for Flutter, designed to manage both simple and complex states without relying on external state management libraries. It provides an easy-to-use API that integrates seamlessly into your Flutter applications.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Manage simple and complex states (e.g., primitive types, Lists, Maps).
+- Supports both synchronous and asynchronous state updates.
+- Stream-based state updates to minimize unnecessary re-renders.
+- Automatic state disposal to avoid memory leaks.
+- Simple API to get, set, and listen to state changes.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add `flower` as a dependency in your `pubspec.yaml` file:
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  flower: ^1.0.0
 ```
 
-## Additional information
+Run the following command to install the package:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```bash
+flutter pub get
+```
+
+## Usage
+### Creating and Updating State
+
+```dart
+import 'package:flower/flower.dart';
+
+void main() {
+  // Initialize state with a default value
+  final state = State<int>(0);
+
+  // Listening to state changes
+  state.stream.listen((newValue) {
+    print('State updated to: $newValue');
+  });
+
+  // Update state synchronously
+  state.value = 1;  // Output: State updated to: 1
+
+  // Update state asynchronously
+  state.updateAsync(() async {
+    await Future.delayed(Duration(seconds: 1));
+    return 42;
+  }).then((_) {
+    print('State updated to: ${state.value}');  // Output: State updated to: 42
+  });
+}
+```
+
+### Resetting State
+
+```dart
+// Reset state to its initial value
+state.value = 0;
+```
+
+### Dispose State
+
+```dart
+// Dispose the state when you're done with it to avoid memory leaks
+state.dispose();
+```
+
+## Example Project
+To see `flower` in action, check out the example project in the [example](https://github.com/14h4i/flower/blob/master/example/lib/main.dart).
+
+## Contributions
+Contributions are welcome! Please feel free to open issues and pull requests.
+
+## Issues and feedback
+
+Please file [issues](https://github.com/14h4i/flower/issues) to send feedback or report a bug. Thank you!
+
+## License
+[MIT](https://mit-license.org) License
+
+<a href="https://www.buymeacoffee.com/14h4i" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
+

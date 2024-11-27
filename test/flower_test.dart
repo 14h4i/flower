@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flower/flower.dart';
+import 'package:flowner/flowner.dart';
 
 void main() {
   group('State Tests', () {
@@ -21,17 +21,17 @@ void main() {
       state.value = 3;
     });
 
-    // Test for creating and retrieving a state using Flower
-    test('Flower should create and retrieve state', () {
-      final state = Flower.createState<int>('test', 0);
-      expect(Flower.getState<int>('test'), state);
+    // Test for creating and retrieving a state using Flowner
+    test('Flowner should create and retrieve state', () {
+      final state = Flowner.createState<int>('test', 0);
+      expect(Flowner.getState<int>('test'), state);
     });
 
-    // Test for removing a state using Flower
-    test('Flower should remove state', () {
-      Flower.createState<int>('test-remove', 0);
-      Flower.removeState('test-remove');
-      expect(Flower.getState<int>('test-remove'), isNull);
+    // Test for removing a state using Flowner
+    test('Flowner should remove state', () {
+      Flowner.createState<int>('test-remove', 0);
+      Flowner.removeState('test-remove');
+      expect(Flowner.getState<int>('test-remove'), isNull);
     });
 
     // Test for asynchronous state update

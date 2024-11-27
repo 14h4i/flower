@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flower/flower.dart';
+import 'package:flowner/flowner.dart';
 
 const counterStateId = 'counter';
 
@@ -11,7 +11,7 @@ Future<int> fetchCounterFromApi() async {
 
 void main() {
   // Create state for counter.
-  Flower.createState<int>(counterStateId, 0);
+  Flowner.createState<int>(counterStateId, 0);
 
   runApp(const MyApp());
 }
@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final counter = Flower.getState<int>(counterStateId);
+    final counter = Flowner.getState<int>(counterStateId);
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Flower Example')),
+        appBar: AppBar(title: const Text('Flowner Example')),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

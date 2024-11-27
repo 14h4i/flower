@@ -1,7 +1,7 @@
 import 'flow_state.dart';
 
 /// A centralized manager for handling application states.
-class Flower {
+class Flowner {
   static final Map<String, dynamic> _states = {};
 
   /// Create a new state with an initial value.

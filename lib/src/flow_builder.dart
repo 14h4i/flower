@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'flower.dart';
+import 'flowner.dart';
 
 /// A widget that rebuilds UI when the associated state changes using StreamBuilder.
 class FlowBuilder<T> extends StatelessWidget {
@@ -14,7 +14,7 @@ class FlowBuilder<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = Flower.getState<T>(stateId);
+    final state = Flowner.getState<T>(stateId);
     if (state == null) {
       throw Exception("State with id '$stateId' not found.");
     }

@@ -1,7 +1,7 @@
-name: flower
+name: flowner
 description: "A state management package for Flutter, offering simplicity, efficiency, and scalability."
 version: 1.0.0
-homepage: https://github.com/14h4i/flower
+homepage: https://github.com/14h4i/flowner
 
 environment:
   sdk: ^3.5.4

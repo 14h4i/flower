@@ -1,14 +1,10 @@
 # Flowner - A Lightweight Flutter State Management Solution
 
----
-
 [![Pub](https://img.shields.io/pub/v/flowner.svg)](https://pub.dev/packages/flowner)
 
 **Flowner** is a minimal, efficient, and intuitive state management library for Flutter. Built with simplicity and performance in mind, it provides developers with the tools to manage state effectively in Flutter applications without relying on third-party state management solutions. 
 
 Whether you're building a small app or a large-scale application, Flowner adapts to your needs with its powerful yet easy-to-use API.
-
----
 
 ## ✨ Features
 
@@ -18,7 +14,6 @@ Whether you're building a small app or a large-scale application, Flowner adapts
 - **Memory-safe**: Prevent memory leaks with a simple `dispose` method for state cleanup.
 - **Lightweight**: No external dependencies — just pure Dart.
 
----
 
 ## 🚀 Getting Started
 
